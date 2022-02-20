@@ -11,7 +11,6 @@ mkcert -key-file docker/nginx/ssl/cert-key.pem -cert-file docker/nginx/ssl/cert.
 ### Build Docker container
 ```bash
 docker-compose up -d --build
-docker-compose exec php composer install
 ```
 
 ## Maintenance mode
