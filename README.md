@@ -1,4 +1,4 @@
-# nginx-maintenance-mode
+# maintenance-mode-demo
 Change to maintenance mode with nginx.
 
 ## Build
@@ -8,9 +8,10 @@ Change to maintenance mode with nginx.
 mkcert -key-file docker/nginx/ssl/cert-key.pem -cert-file docker/nginx/ssl/cert.pem localhost 127.0.0.1 ::1
 ```
 
-### Build Docker container
+### Build
 ```bash
 docker-compose up -d --build
+docker-compose exec php composer install
 ```
 
 ## Maintenance mode
