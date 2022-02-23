@@ -14,6 +14,8 @@ RUN apt-get update  && apt-get install -y --no-install-recommends \
      nodejs \
      npm
 
+RUN docker-php-ext-install pdo_mysql
+
 # php composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 

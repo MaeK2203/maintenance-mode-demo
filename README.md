@@ -10,8 +10,28 @@ mkcert -key-file docker/nginx/ssl/cert-key.pem -cert-file docker/nginx/ssl/cert.
 
 ### Build
 ```bash
+cp -p .env.example .env
+```
+
+```bash
 docker-compose up -d --build
+```
+
+```bash
 docker-compose exec php composer install
+docker-compose exec php php artisan key:generate
+docker-compose exec php php artisan migrate
+```
+
+```bash
+docker-compose exec php npm ci
+docker-compose exec php npm run dev
+```
+
+### Access
+```bash
+https://localhost/register
+https://localhost/login
 ```
 
 ## Maintenance mode
